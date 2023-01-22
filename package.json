@@ -13,7 +13,7 @@
     "@ensdomains/eth-ens-namehash": "^2.0.15",
     "@types/lodash": "^4.14.170",
     "btoa": "^1.2.1",
-    "canvas": "^2.8.0",
+    "canvas": "^2.11.0",
     "compression": "^1.7.4",
     "cors": "^2.8.5",
     "dompurify": "^2.3.9",
@@ -33,9 +33,8 @@
   },
   "scripts": {
     "build": "tsc --project ./ && cpx 'src/assets/**' 'dist/assets'",
-    "dev": "cross-env ENV=local ts-node-dev --inspect -- src/index.ts",
+    "dev": "ts-node-dev --inspect -- src/index.ts",
     "start": "node dist/index.js",
-    "deploy": "ENV=prod yarn build",
     "test": "ava -v --serial --timeout=1m",
     "test:cov": "nyc --reporter=json --reporter=text ava --serial",
     "docgen": "node docgen.js"
@@ -49,7 +48,6 @@
     "@types/node": "^16.11.0",
     "@types/node-fetch": "^2.5.11",
     "@types/test-listen": "^1.1.0",
-    "cross-env":  "7.0.3",
     "ava": "^5.0.1",
     "cpx": "^1.5.0",
     "got": "^11.8.2",
